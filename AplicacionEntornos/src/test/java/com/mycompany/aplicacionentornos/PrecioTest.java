@@ -42,13 +42,13 @@ public class PrecioTest {
     @Test
     public void testPrecioConIva() {
         System.out.println("precioConIva");
-        Producto pro = null;
+        Producto pro = new Producto("galletas",3.00,1,5);
         Precio instance = new Precio();
-        double expResult = 0.0;
+        double expResult = 3.63;
         double result = instance.precioConIva(pro);
-        assertEquals(expResult, result, 0.0);
+        assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -57,13 +57,13 @@ public class PrecioTest {
     @Test
     public void testPrecioTotal() {
         System.out.println("precioTotal");
-        int unidades = 0;
+        int unidades = 5;
         Precio instance = new Precio();
-        double expResult = 0.0;
+        double expResult = 18.15;
         double result = instance.precioTotal(unidades);
-        assertEquals(expResult, result, 0.0);
+        assertEquals(expResult, result, 18.15);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
     
 }
