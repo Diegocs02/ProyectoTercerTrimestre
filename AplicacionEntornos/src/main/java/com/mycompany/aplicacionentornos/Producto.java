@@ -52,7 +52,7 @@ public double precioConIva(){
     public void setUnidades(int unidades) {
         this.unidades = unidades;
     }
-
+//este no hacia falta
     @Override
     public String toString() {
         return "Producto{" + "nombre=" + nombre + ", precio=" + precio + ", idProducto=" + idProducto + ", unidades=" + unidades + '}';
