@@ -16,22 +16,22 @@ import static org.junit.jupiter.api.Assertions.*;
  * @author Administrador
  */
 public class PrecioTest {
-    
+
     public PrecioTest() {
     }
-    
+
     @BeforeAll
     public static void setUpClass() {
     }
-    
+
     @AfterAll
     public static void tearDownClass() {
     }
-    
+
     @BeforeEach
     public void setUp() {
     }
-    
+
     @AfterEach
     public void tearDown() {
     }
@@ -42,13 +42,25 @@ public class PrecioTest {
     @Test
     public void testPrecioConIva() {
         System.out.println("precioConIva");
-        Producto pro = new Producto("galletas",3.00,1,5);
+        Producto pro = new Producto("galletas", 3.00, 1, 5);
         Precio instance = new Precio();
         double expResult = 3.63;
         double result = instance.precioConIva(pro);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        
+
+    }
+
+    @Test
+    public void testPrecioConIva2() {
+        System.out.println("precioConIva");
+        Producto pro = new Producto("galletas", -3.00, 1, 5);
+        Precio instance = new Precio();
+        double expResult = 1;
+        double result = instance.precioConIva(pro);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+
     }
 
     /**
@@ -63,7 +75,19 @@ public class PrecioTest {
         double result = instance.precioTotal(unidades);
         assertEquals(expResult, result, 18.15);
         // TODO review the generated test code and remove the default call to fail.
-        
+
     }
     
+        @Test
+    public void testPrecioTotal2() {
+        System.out.println("precioTotal");
+        int unidades = -5;
+        Precio instance = new Precio();
+        double expResult = 1;
+        double result = instance.precioTotal(unidades);
+        assertEquals(expResult, result, 1);
+        // TODO review the generated test code and remove the default call to fail.
+
+    }
+
 }
